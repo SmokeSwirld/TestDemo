@@ -1,0 +1,81 @@
+﻿<Window x:Class="TestDemo.NewTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestDemo"
+        mc:Ignorable="d"
+        Title="NewTest" Height="450" Width="800">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="10" >
+            <TextBlock x:Name="TestName" Text="{Binding TestName}" FontWeight="Bold" Margin="5,5,5,5" TextAlignment="Center"/>
+            <TextBlock Text="Напишіть Питання:" FontWeight="Bold"/>
+            <TextBox x:Name="TestNameTextBox" Text="Питання" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Кількість відповідей:" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Content="2" GroupName="AnswerCountGroup" Checked="RadioButton_Checked" Margin="0,0,10,0"/>
+                <RadioButton Content="3" GroupName="AnswerCountGroup" Checked="RadioButton_Checked" Margin="0,0,10,0"/>
+                <RadioButton Content="4" GroupName="AnswerCountGroup" Checked="RadioButton_Checked" Margin="0,0,10,0"/>
+                <RadioButton Content="5" GroupName="AnswerCountGroup" Checked="RadioButton_Checked" Margin="0,0,10,0"/>
+            </StackPanel>
+
+            <TextBlock Text="Напишіть відповіді(навпротив правильної поставте галочку або декілька якщо правельних відповідей декілька):" FontWeight="Bold" Margin="0,10,0,0"/>
+            <StackPanel x:Name="AnswersPanel" Margin="0,10,0,0">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Name="AnswerCheckBox1" Margin="5"/>
+                    <TextBox Name="AnswerTextBox1" Text="Відповідь 1" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"/>
+                </Grid>
+
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Name="AnswerCheckBox2" Margin="5"/>
+                    <TextBox Name="AnswerTextBox2" Text="Відповідь 2" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"/>
+                </Grid>
+
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Name="AnswerCheckBox3" Margin="5"/>
+                    <TextBox Name="AnswerTextBox3" Text="Відповідь 3" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"/>
+                </Grid>
+
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Name="AnswerCheckBox4" Margin="5"/>
+                    <TextBox Name="AnswerTextBox4" Text="Відповідь 4" TextAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"/>
+                </Grid>
+
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Name="AnswerCheckBox5" Margin="5"/>
+                    <TextBox Name="AnswerTextBox5" Text="Відповідь 5" TextAlignment="Left"  VerticalAlignment="Center" HorizontalAlignment="Stretch" Grid.Column="1"/>
+                </Grid>
+            </StackPanel>
+
+
+            <Button Content="Зберегти тест" Click="SaveTest_Click"/>
+            
+                <StackPanel Margin="10" x:Name="MainStackPanel">
+                </StackPanel>
+        </StackPanel>
+        </ScrollViewer>
+        
+    </Grid>
+</Window>
